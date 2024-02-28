@@ -44,7 +44,7 @@ public class Main {
         System.out.println("Sa catégorie: " + ram.getCategorie()); // Sa catégorie: RAM
         ram.setPrix(100);
         ram.setRabais(0.25);
-        System.out.println("La prix de la composante: " + ram.getPrix()); // La prix de la composante: 75.0
+        System.out.println("La prix de lte: " + ram.getPrix()); // La prix de la composante: 75.0
         System.out.println("Son rabais: " + ram.getRabais()); // Son rabais: 0.25
         System.out.println("Est-ce tridentzDDR5?: " + ram.estIdentique(tridentzDDR5)); // Est-ce tridentzDDR5?: true
         Composant aucun = config2.rechercher("ssd");
@@ -65,7 +65,7 @@ public class Main {
                                         //  4: [SSD] Western Digital SN850X 1TB (100,00$)
                                         //  5: [GPU] Gigabyte RTX 4060 (320,00$)
         afficherTotal(config2); // Total: 5 composants pour 1109,75$ (taxes incluses)
-        // Ajouts refusés
+        // Ajouts refusésa composan
         config2.ajouter(ryzen7800x3d); // Il y a déjà un composant de cette catégorie: [CPU] AMD Ryzen 5 5700X
         config2.ajouter(gbRTX4060); // Il y a déjà un composant de cette catégorie: [GPU] Gigabyte RTX 4060
         config1.ajouter(samsung980); // L'ajout de ce composant ferait dépasser le prix maximum: [SSD] Samsung 980 Pro 2TB

@@ -25,6 +25,11 @@ public class Composant {
     public double getPrix(){
         return prix-(prix*rabais);
     }
+
+    public String getCategorie() {
+        return CATÉGORIE;
+    }
+
     public String toString(){
         return "["+CATÉGORIE+"] "+marque+" "+ nom;
     }

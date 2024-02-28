@@ -23,9 +23,68 @@ public class Configuration {
         }
     }
     public double calculerTotal(double taxe){
+        double soustotal = 0;
         for (int i = 0; i < composants.length; i++) {
-
+            soustotal += composants[i].getPrix();
+        }
+        return ((soustotal * taxe) + soustotal);
+    }
+    public Composant rechercher(String categorie){
+        Composant composant;
+        for (int i = 0; i < composants.length; i++) {
+            if (composants[i].getCategorie().equals(categorie)) {
+                composant = composants[i];
+                return composant;
+            }
+        }
+        return null;
+    }
+    public boolean ajouter(Composant composant){
+        double prixPc = 0;
+        for (int i = 0; i < composants.length; i++) {
+            prixPc += composants[i].getPrix();
+        }
+        if (prixPc >= prixMax){
+            return false;
+        }else {
+            for (int i = 0; i < composants.length; i++) {
+                if (composants[i] == null) {
+                    composants[i] = composant;
+                    nbrcompssants += 1;
+                    break;
+                }
+            }
+            return true;
         }
     }
-    
+    public boolean retirer(Composant composant){
+        for (int i = 0; i < composants.length; i++) {
+            if (composants[i] == composant){
+                composants[i] = null;
+                return true;
+            }
+        }
+        return false;
+    }
+    public boolean remplacer(Composant composant){
+        Composant aremplacee = rechercher(composant.getCategorie());
+        if (aremplacee != null) {
+            for (int i = 0; i < composants.length; i++) {
+                if (composants[i] == aremplacee) {
+                    composants[i] = composant;
+                    return true;
+                }
+            }
+        }else {
+            return false;
+        }
+        return false;
+    }
+    public String toString(){
+        String composants = "";
+        for (int i = 0; i < nbrcompssants; i++) {
+            composants += (i + 1) + ": " + this.composants[i] + " (" + this.composants[i].getPrix() + ")\n";
+        }
+        return description + "(" + prixMax + ") :\n" + composants;
+    }
 }
