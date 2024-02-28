@@ -64,10 +64,16 @@ public class Configuration {
         }
     }
     public boolean retirer(Composant composant){
+        // mettre un loop pour avancer les variable pour ne pas commencer par un null
         for (int i = 0; i < composants.length; i++) {
             if (composants[i] == composant){
                 composants[i] = null;
                 nbrcompssants -= 1;
+                for (int j = i; j < composants.length; j++) {
+                    if ((j + 1) < MAX_COMPOSANTS) {
+                        composants[j] = composants[j + 1];
+                    }
+                }
                 return true;
             }
         }
