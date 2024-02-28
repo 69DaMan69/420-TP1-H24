@@ -30,6 +30,18 @@ public class Composant {
         return CATÉGORIE;
     }
 
+    public double getRabais() {
+        return rabais;
+    }
+
+    public void setRabais(double rabais) {
+        this.rabais = rabais;
+    }
+
+    public void setPrix(double prix) {
+        this.prix = prix;
+    }
+
     public String toString(){
         return "["+CATÉGORIE+"] "+marque+" "+ nom;
     }
