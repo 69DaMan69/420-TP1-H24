@@ -50,14 +50,19 @@ public class Configuration {
                 prixPc += composants[i].getPrix();
             }
         }
-        if (prixPc >= prixMax){
+        if (prixPc + composant.getPrix() >= prixMax || nbrcompssants == MAX_COMPOSANTS){
             return false;
         }else {
             for (int i = 0; i < composants.length; i++) {
-                if (composants[i] == null) {
-                    composants[i] = composant;
-                    nbrcompssants += 1;
-                    break;
+                if (composants[i] != null) {
+                    if (composants[i].getCategorie().equalsIgnoreCase(composant.getCategorie())){
+                        return false;
+                    }
+                    else if (composants[i] == null) {
+                            composants[i] = composant;
+                            nbrcompssants += 1;
+                            break;
+                    }
                 }
             }
             return true;
