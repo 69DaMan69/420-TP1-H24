@@ -46,3 +46,4 @@ public class Composant {
         return "["+CATÉGORIE+"] "+marque+" "+ nom;
     }
 }
+

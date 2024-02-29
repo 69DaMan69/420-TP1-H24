@@ -119,3 +119,4 @@ public class Configuration {
         return description + "(" + prixMax + ") :\n" + composants;
     }
 }
+
